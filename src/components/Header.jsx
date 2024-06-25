@@ -1,7 +1,6 @@
 import { useState } from "react";
 import styled from "styled-components";
 import CreatePost from "./Modal/CreatePost";
-
 const Header = ({ getPostData }) => {
   const [createPostIsOpen, setCreatePostIsOpen] = useState(false);
   const handlePostClick = () => {
