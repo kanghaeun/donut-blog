@@ -23,9 +23,9 @@ const PostCard = styled.button`
   height: 14rem;
   border: none;
   background-color: #fff;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  box-shadow: 0rem 0.25rem 0.5rem rgba(0, 0, 0, 0.2);
   border-radius: 50%;
-  border: #758d32;
+  border: 0.1875rem #758d32;
   padding: 2rem;
   color: #333;
   font-weight: bold;
@@ -34,8 +34,8 @@ const PostCard = styled.button`
   margin: 1.1rem;
 
   &:hover {
-    transform: translateY(-4px);
-    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
+    transform: translateY(-0.25rem);
+    box-shadow: 0rem 0.5rem 1rem rgba(0, 0, 0, 0.3);
   }
 `;
 
@@ -44,22 +44,22 @@ const TitleWrapper = styled.div`
   color: #ff6b6b;
   text-align: center;
   margin-bottom: 1rem;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+  text-shadow: 0.0625rem 0.0625rem 0.125rem rgba(0, 0, 0, 0.2);
 `;
 
 const TagWrapper = styled.div`
   font-size: 0.9rem;
   background-color: #ffeeba;
-  padding: 4px 8px;
-  border-radius: 12px;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.75rem;
   text-align: center;
   margin-bottom: 1rem;
-  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+  box-shadow: 0.0625rem 0.0625rem 0.125rem rgba(0, 0, 0, 0.2);
 `;
 
 const DateWrapper = styled.div`
   font-size: 0.8rem;
   color: #9e9e9e;
   text-align: center;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+  text-shadow: 0.0625rem 0.0625rem 0.125rem rgba(0, 0, 0, 0.1);
 `;

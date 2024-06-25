@@ -1,6 +1,7 @@
 import { useState } from "react";
 import styled from "styled-components";
 import CreatePost from "./Modal/CreatePost";
+
 const Header = ({ getPostData }) => {
   const [createPostIsOpen, setCreatePostIsOpen] = useState(false);
   const handlePostClick = () => {
@@ -57,14 +58,14 @@ const PostButton = styled.button`
   color: black;
   border: none;
   padding: 0.75rem 1.5rem;
-  border-radius: 20px;
+  border-radius: 1.25rem;
   cursor: pointer;
   font-size: 1rem;
   transition: all 0.3s ease;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0px 4px 8px rgba(21, 19, 14, 0.2);
+  box-shadow: 0rem 0.25rem 0.5rem rgba(21, 19, 14, 0.2);
 `;
 
 const ButtonText = styled.span`
