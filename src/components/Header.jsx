@@ -10,9 +10,7 @@ const Header = ({ getPostData }) => {
   return (
     <>
       <HeaderFrame>
-        <TitleWrapper>
-          <Title>Dount Blog</Title>
-        </TitleWrapper>
+        <TitleWrapper></TitleWrapper>
         <ButtonWrapper>
           <PostButton onClick={handlePostClick}>
             <ButtonText>글 쓰기</ButtonText>
