@@ -63,7 +63,6 @@ const DeleteButton = styled.button`
   cursor: pointer;
   display: flex;
   justify-content: center;
-  align-items: center;
 `;
 
 const DeleteButtonIcon = styled.div`
