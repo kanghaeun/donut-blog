@@ -5,13 +5,15 @@ import PostItem from "./PostItem";
 const PostList = ({ postData, handlePostClick }) => {
   const [currentPage, setCurrentPage] = useState(1);
   const postsPerPage = 9;
-  const totalPosts = postData.length;
 
+  const totalPosts = postData.length;
   const totalPages = Math.ceil(totalPosts / postsPerPage);
 
-  const indexOfLastPost = currentPage * postsPerPage;
-  const indexOfFirstPost = indexOfLastPost - postsPerPage;
-  const currentPosts = postData.slice(indexOfFirstPost, indexOfLastPost);
+  // Get current posts based on pagination
+  const currentPosts = postData.slice(
+    (currentPage - 1) * postsPerPage,
+    currentPage * postsPerPage
+  );
 
   const handlePageChange = (pageNumber) => {
     setCurrentPage(pageNumber);
@@ -25,17 +27,15 @@ const PostList = ({ postData, handlePostClick }) => {
         ))}
       </PostFrame>
       <PaginationWrapper>
-        {Array.from({ length: totalPages }, (_, i) => i + 1).map(
-          (pageNumber) => (
-            <PageButton
-              key={pageNumber}
-              active={currentPage === pageNumber}
-              onClick={() => handlePageChange(pageNumber)}
-            >
-              {pageNumber}
-            </PageButton>
-          )
-        )}
+        {Array.from({ length: totalPages }, (_, i) => (
+          <PageButton
+            key={i + 1}
+            active={currentPage === i + 1}
+            onClick={() => handlePageChange(i + 1)}
+          >
+            {i + 1}
+          </PageButton>
+        ))}
       </PaginationWrapper>
     </div>
   );
@@ -43,6 +43,7 @@ const PostList = ({ postData, handlePostClick }) => {
 
 export default PostList;
 
+// Styled components
 const PostFrame = styled.div`
   display: flex;
   flex-wrap: wrap;
@@ -56,7 +57,7 @@ const PaginationWrapper = styled.div`
 
 const PageButton = styled.button`
   background-color: ${(props) => (props.active ? "#c5c5c5" : "#F0F0F0")};
-  color: ${(props) => (props.active ? "#333" : "#333")};
+  color: #333;
   border: none;
   padding: 0.5rem 1rem;
   margin: 0 0.25rem;
