@@ -72,7 +72,3 @@ const PostButton = styled.button`
     background-color: #f0f0f0; // 추가된 hover 효과
   }
 `;
-
-const ButtonText = styled.span`
-  font-weight: bold;
-`;
