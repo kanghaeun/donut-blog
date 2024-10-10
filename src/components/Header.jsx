@@ -75,5 +75,4 @@ const PostButton = styled.button`
 
 const ButtonText = styled.span`
   font-weight: bold;
-  text-transform: uppercase;
 `;
