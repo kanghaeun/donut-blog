@@ -20,41 +20,35 @@ const CreatePost = ({ isOpen, onRequestClose, getPostData }) => {
     setBody("");
   };
 
+  const handleChange = (setter) => (e) => setter(e.target.value);
+
   return (
-    <>
-      <Modal
-        isOpen={isOpen}
-        onRequestClose={onRequestClose}
-        className="CreatePostCss"
-        overlayClassName="overlay"
-      >
-        <CloseButton onClick={onRequestClose}>
-          <IoClose size="1.2rem" />
-        </CloseButton>
-        <InputField
-          placeholder="제목을 입력하세요"
-          value={title}
-          onChange={(e) => {
-            setTitle(e.target.value);
-          }}
-        />
-        <InputField
-          placeholder="태그를 입력하세요"
-          value={tag}
-          onChange={(e) => {
-            setTag(e.target.value);
-          }}
-        />
-        <InputField
-          placeholder="메모를 입력하세요"
-          value={body}
-          onChange={(e) => {
-            setBody(e.target.value);
-          }}
-        />
-        <SaveButton onClick={onSubmit}>저장</SaveButton>
-      </Modal>
-    </>
+    <Modal
+      isOpen={isOpen}
+      onRequestClose={onRequestClose}
+      className="CreatePostCss"
+      overlayClassName="overlay"
+    >
+      <CloseButton onClick={onRequestClose}>
+        <IoClose size="1.2rem" />
+      </CloseButton>
+      <InputField
+        placeholder="제목을 입력하세요"
+        value={title}
+        onChange={handleChange(setTitle)}
+      />
+      <InputField
+        placeholder="태그를 입력하세요"
+        value={tag}
+        onChange={handleChange(setTag)}
+      />
+      <InputField
+        placeholder="메모를 입력하세요"
+        value={body}
+        onChange={handleChange(setBody)}
+      />
+      <SaveButton onClick={onSubmit}>저장</SaveButton>
+    </Modal>
   );
 };
 
@@ -74,7 +68,7 @@ const InputField = styled.input`
   &:focus {
     outline: none;
     border-color: #ffeeba;
-    box-shadow: 0 0 0 3px #ffeeba(139, 0, 139, 0.2);
+    box-shadow: 0 0 0 3px rgba(139, 0, 139, 0.2);
   }
 
   &::placeholder {
